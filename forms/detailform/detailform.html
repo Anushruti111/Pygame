@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>PersonalDetail</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+        <!-- ==============Jquery code of file upload============== -->
+        <script>
+            $(document).ready(function(){
+            $("#filePHOTO").change(function(){
+            $("#file_error").html("");
+            $(".file_upload1").css("border-color","#F0F0F0");
+            var file_size = $('#filePHOTO')[0].files[0].size;
+            if(file_size>300000) {
+            $("#file_error").html("<p style='color:#FF0000'>File size is greater than 300kb</p>");
+            $(".file_upload1").css("border-color","#FF0000");
+            return false;
+            } 
+            return true;
+            });
+            });
+            </script>
+
+
+
+    </head>
+    <body>
+        
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                    <h3>Welcome</h3>
+                    <p>Please feed here your personal detail!</p>
+                    <input type="submit" name="" value="Submit"/><br/>
+                </div>
+                <div class="col-md-9 register-right">
+                    <!-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
+                        </li>
+                    </ul> -->
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Personal Detail Form</h3>
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Full Name *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Aadhar No. *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Current Addresh *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"  placeholder="Postal Code *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="maxl">
+                                            <label class="radio inline"> 
+                                                <input type="radio" name="select" value="Doner" checked>
+                                                <span> Doner </span> 
+                                            </label>
+                                            <label class="radio inline"> 
+                                                <input type="radio" name="select" value="NGO">
+                                                <span>NGO </span> 
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Email *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option class="hidden"  selected disabled>Select your state</option>
+                                            <option>Andhara Pradesh</option>
+                                            <option>Assam</option>
+                                            <option>Bihar</option>
+                                            <option>Chhattisgarh</option>
+                                            <option>Goa</option>
+                                            <option>Gujarat</option>
+                                            <option>Haryana</option>
+                                            <option>Himanchal Pradesh</option>
+                                            <option>Jammu Kashmir</option>
+                                            <option>Jharkhand</option>
+                                            <option>Karnataka</option>
+                                            <option>Kerala</option>
+                                            <option>Madhya Pradesh</option>
+                                            <option>Manipur</option>
+                                            <option>Maharashtra</option>
+                                            <option>Manipur</option>
+                                            <option>Meghalaya</option>
+                                            <option>Mizoram</option> 
+                                            <option>Nagaland</option>
+                                            <option>Odisha</option>
+                                            <option>Punjab</option>
+                                            <option>Rajsthan</option>
+                                            <option>Sikkim</option>
+                                            <option>Tamil Nadu</option>
+                                            <option>Tripura</option>
+                                            <option>Telangana</option>
+                                            <option>Uttar Pradesh</option>
+                                            <option>Uttarakhand</option>
+                                            <option>West Bengal</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Profession *" value="" />
+                                    </div>
+                                    <!-- <input type="submit" class="btnRegister"  value="Register" href="#"/> -->
+                                    <span id="file_error"><strong>upload profile pic..</strong></span>
+                                    <input type="file" id="filePHOTO" name="file_upload1" class="file_upload1">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
